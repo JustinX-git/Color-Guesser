@@ -67,7 +67,6 @@ if(!e.target.classList.contains("uninteractable")){
     e.target.classList.add("uninteractable"); //An 'uniteractable' class is added to clicked color box to ensure player does not spam the same box multiple times to get a higer score.
 
     DOMColorOptions.forEach(option =>{
-     option.isDisabled = true;
      option.animate({
         transform: "scale(0)"
       },{duration: 700, easing: "cubic-bezier(.28,-0.82,.52,1.12)", fill:"forwards"})
