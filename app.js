@@ -52,6 +52,8 @@ DOMColorOptions.forEach((option, index)=>{
       transform: "scale(1)"
     },{duration: 400, delay: 50 * index, easing: "cubic-bezier(0,-0.01,.63,1.47)", fill:"forwards"});
 
+    //Reset box shadows
+    option.style.boxShadow = "9px 9px 5px black"
     //Ensures that all color boxes are now interactable.
     option.classList.remove("uninteractable");
 });

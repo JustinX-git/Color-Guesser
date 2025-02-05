@@ -17,6 +17,7 @@ body{
     position: relative;
     color: #fff;
     height: 100vh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
     font-weight: 200;
