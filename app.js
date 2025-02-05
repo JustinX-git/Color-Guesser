@@ -66,11 +66,6 @@ if(!e.target.classList.contains("uninteractable")){
     const selectionColor = e.target.getAttribute("data-colorOption");
     e.target.classList.add("uninteractable"); //An 'uniteractable' class is added to clicked color box to ensure player does not spam the same box multiple times to get a higer score.
 
-//     DOMColorOptions.forEach(option =>{
-//      option.animate({
-//         transform: "scale(0)"
-//       },{duration: 700, easing: "cubic-bezier(.28,-0.82,.52,1.12)", fill:"forwards"})
-//    });
     DOMColorOptions.forEach(option => {
       option.getAnimations().forEach(anim => anim.cancel());  // Cancel existing animations
       option.animate(
@@ -143,10 +138,10 @@ const newGameHandler = () =>{
     );
 
     DOMColorOptions.forEach(option =>{
-        option.isDisabled = true;
-        option.animate({
-           transform: "scale(0)"
-         },{duration: 0, delay:0, fill:"forwards"})
+        option.getAnimations().forEach(anim => anim.cancel());
+        option.animate(
+          [{ transform: "scale(1)" }, { transform: "scale(0)" }]
+         ,{duration: 0, delay:0, fill:"forwards"})
       });
 
     roundInitializer()
